@@ -1,0 +1,41 @@
+$background:  #E5E5E5;
+$primary: #8472F5;
+
+.add-group {
+  align-items: center;
+  background-color: $background;
+  display: grid;
+  height: calc(100% - 50px);
+  justify-items: center;
+  font-family: Poppins;
+
+  .center {
+    height: 80%;
+    padding: 10px;
+    width: 90%;
+  }
+
+  mat-card-content {
+    padding: 2rem 4rem;
+  }
+
+  // .heading {
+  //   font-size: larger;
+  // }
+
+  mat-form-field {
+    width: 60%;
+    line-height: 1.0;
+  }
+
+  .example-chip-list {
+    width: 100%;
+  }
+
+}
+.add-group-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+

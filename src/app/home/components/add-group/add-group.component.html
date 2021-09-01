@@ -1,0 +1,65 @@
+<div class="add-group">
+  <mat-card class="add-group-card center">
+
+    <!-- login-page heading and subheading -->
+    <mat-card-content>
+      <div>
+        <h1 class="heading"><button mat-stroked-button (click)="routeBack()"><mat-icon>arrow_back</mat-icon></button> Create Group</h1>
+      </div>
+
+      <!-- form-group for entering login credentials -->
+      <form class="add-group-form" [formGroup]="addGroupForm">
+
+        <!-- username input field -->
+          <mat-form-field appearance="fill" class="w-100p">
+            <mat-label>Group Name</mat-label>
+            <input matInput placeholder="" formControlName="groupName">
+          </mat-form-field>
+
+        <!-- password input field -->
+          <mat-form-field appearance="fill" class="w-100p">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="" formControlName="description">
+          </mat-form-field>
+
+        <!-- members input field -->
+          <mat-form-field class="members-chip-list" class="w-100p">
+            <mat-label>Add Members</mat-label>
+            <mat-chip-list #chipList aria-label="Members Selection">
+              <mat-chip
+                *ngFor="let member of members"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="remove(member.fullName)">
+                {{member.fullName}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input
+                placeholder="New Member..."
+                #memberInput
+                [formControl]="memberCtrl"
+                [matAutocomplete]="auto"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)" [displayWith]="autoCompleteDisplay">
+              <mat-option *ngFor="let member of filteredMembers | async" [value]="member">
+                {{member.fullName}}
+                <mat-icon *ngIf="isSelected(member)">check</mat-icon>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+
+      </form>
+
+      <!-- cancel button -->
+      <div class="buttons">
+        <button mat-button class="full-width" color="primary" (click)="cancel()">CANCEL</button>
+        <button mat-flat-button class="full-width" color="accent" (click)="addGroup()">CREATE</button>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

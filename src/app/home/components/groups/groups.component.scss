@@ -1,0 +1,20 @@
+.group-list-card{
+  display: grid;
+  grid-template-columns: 50px 30% 30% auto 50px;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  .avatar{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #E8E7Ed;
+    justify-self: end;
+  }
+}
+
+.color-blue{
+  color: blue;
+}

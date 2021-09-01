@@ -1,0 +1,31 @@
+<p>
+  <mat-card class="home-card center">
+    <mat-card-content>
+      <p class="heading">All Expenses</p>
+      <div class="below-header">
+        <div class="total-balance">
+          <mat-chip-list>
+            <mat-chip>Total Balance {{totalBalance}}</mat-chip>
+          </mat-chip-list>
+        </div>
+        <div class="example-spacer"></div>
+        <div class="create-group-button">
+          <button mat-raised-button [routerLink]="'/add-group'" color="accent" >Add Group</button>
+        </div>
+      </div>
+      <mat-tab-group>
+        <!-- lazy loading mat-tab -->
+        <mat-tab label="friends">
+          <ng-template matTabContent>
+            <app-friends (totalBalance)="totalBalance = $event"></app-friends>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="groups">
+          <ng-template matTabContent>
+            <app-groups  (totalBalance)="totalBalance = $event"></app-groups>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</p>

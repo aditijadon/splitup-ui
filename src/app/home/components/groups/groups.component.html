@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card *ngFor="let group of groups; let i=index" [routerLink]="'/group'" [queryParams]="{id: group.id}" class="group-list-card">
+        <div class="avatar"></div>
+        <div class="name">{{group.groupName}}</div>
+        <div class="friends">{{getMembers(group.member)}} <span class="color-blue" *ngIf="group.member.length > 2" [matTooltip]="getTooltip(group)"> +{{group.member.length - 2}} more</span></div>
+        <div class="owes-status">Poker</div>
+        <button mat-icon-button><mat-icon>more_horiz</mat-icon></button>
+    </mat-card>
+</mat-card>
+

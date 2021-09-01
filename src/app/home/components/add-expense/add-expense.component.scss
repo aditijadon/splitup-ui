@@ -1,0 +1,42 @@
+$background:  #E5E5E5;
+$primary: #8472F5;
+
+.add-group {
+  align-items: center;
+  background-color: $background;
+  display: grid;
+  height: 100%;
+  justify-items: center;
+  font-family: Poppins;
+
+  .center {
+    height: auto;
+    padding: 10px;
+    width: 80%;
+  }
+
+  mat-card-content {
+    padding: 2rem 4rem;
+  }
+
+  // .heading {
+  //   font-size: larger;
+  // }
+
+  mat-form-field {
+    width: 60%;
+    line-height: 1.0;
+  }
+
+  .example-chip-list {
+    width: 100%;
+  }
+
+}
+
+.add-expense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+

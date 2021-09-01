@@ -1,0 +1,45 @@
+$background:  #E5E5E5;
+$primary: #8472F5;
+
+.add-group {
+  align-items: center;
+  background-color: $background;
+  display: grid;
+  height: calc(100% - 50px);
+  justify-items: center;
+  font-family: Poppins;
+
+  .center {
+    height: 80%;
+    padding: 10px;
+    width: 90%;
+  }
+}
+  mat-card-content {
+    padding: 2rem 4rem;
+  }
+.group-list-card{
+    display: grid;
+    grid-template-columns: 50px 30% 30% auto 50px;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    .avatar{
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #E8E7Ed;
+      justify-self: end;
+    }
+  }
+
+  .color-blue{
+    color: blue;
+  }
+
+  .list-container-card{
+    background-color: #e5e5e5;
+    min-height: 60%
+  }

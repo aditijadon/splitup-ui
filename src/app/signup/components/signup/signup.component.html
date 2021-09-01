@@ -1,0 +1,71 @@
+<div class="signup">
+    <mat-card class="signup-card center">
+
+      <!-- login-page heading and subheading -->
+      <mat-card-content>
+        <div>
+          <h2>Signup</h2>
+        </div>
+
+      <!-- form-group for entering signup details -->
+        <div class="login-credentials" [formGroup]="signupForm">
+
+          <!-- username input field -->
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="" formControlName="userName">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+
+          <!-- Full name input field -->
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Full Name</mat-label>
+              <input matInput placeholder="" formControlName="fullName">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+
+          <!-- Phone number input field -->
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="" formControlName="phone">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+
+          <!-- Email input field -->
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Email ID</mat-label>
+              <input matInput placeholder="" formControlName="email">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+
+          <!-- Password input field -->
+          <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <!-- signup button for checking login credentials -->
+        <div class="submit-button">
+          <button mat-raised-button class="full-width" color="primary" (click)="signup()">SIGNUP</button>
+        </div>
+        <div class="go-to-login">
+          <p (click)="goToLogin()">Login??</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>

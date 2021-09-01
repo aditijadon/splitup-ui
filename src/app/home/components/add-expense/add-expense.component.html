@@ -1,0 +1,112 @@
+<div class="add-expense">
+  <mat-card class="add-expense-card center">
+
+    <!-- add-expense heading -->
+    <mat-card-content>
+      <div>
+        <h1 class="heading"><button mat-stroked-button (click)="routeBack()"><mat-icon>arrow_back</mat-icon></button> Create Group</h1>
+      </div>
+
+      <!-- form-group for entering expense details -->
+      <form class="add-expense-form" [formGroup]="addExpenseForm">
+
+        <!-- expense-name input field -->
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Bill For</mat-label>
+            <input matInput placeholder="" formControlName="billFor">
+          </mat-form-field>
+        </p>
+
+        <!-- amount input field -->
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input matInput placeholder="" formControlName="amount">
+          </mat-form-field>
+        </p>
+
+        <!-- paid-on input field -->
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Paid On</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="paidOn">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </p>
+
+        <!-- paid-by input field -->
+        <p>
+          <mat-form-field class="members-chip-list" classs="w-100p">
+            <mat-label>Add Members</mat-label>
+            <mat-chip-list #chipList aria-label="Members Selection">
+              <mat-chip
+                *ngFor="let member of members"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="remove(member.fullName)">
+                {{member.fullName}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input
+                placeholder="New Member..."
+                #memberInput
+                [formControl]="memberCtrl"
+                [matAutocomplete]="auto"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)"
+                formControlName="membersName">
+            </mat-chip-list>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)" [displayWith]="autoCompleteDisplay">
+              <mat-option *ngFor="let member of filteredMembers | async" [value]="member">
+                {{member.fullName}}
+                <mat-icon *ngIf="isSelected(member)">check</mat-icon>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </p>
+
+        <!-- members input field -->
+        <p>
+          <mat-form-field class="members-chip-list" classs="w-100p">
+            <mat-label>Add Members</mat-label>
+            <mat-chip-list #chipList aria-label="Members Selection">
+              <mat-chip
+                *ngFor="let member of members"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="remove(member.fullName)">
+                {{member.fullName}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input
+                placeholder="New Member..."
+                #memberInput
+                [formControl]="memberCtrl"
+                [matAutocomplete]="auto"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)"
+                formControlName="membersName">
+            </mat-chip-list>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)" [displayWith]="autoCompleteDisplay">
+              <mat-option *ngFor="let member of filteredMembers | async" [value]="member">
+                {{member.fullName}}
+                <mat-icon *ngIf="isSelected(member)">check</mat-icon>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </p>
+
+      </form>
+
+      <!-- cancel button -->
+      <div class="buttons">
+        <button mat-button class="full-width" color="primary" (click)="cancel()">CANCEL</button>
+        <button mat-flat-button class="full-width" color="accent" (click)="addExpense()">CREATE</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,139 @@
+{
+    "friendResponse": {
+        "id": 22,
+        "email": "johnpapa@vs.com",
+        "name": "john papa",
+        "phone":"+990164568",
+        "expense": "-200"
+    },
+
+    "groupsResponse":{
+        "id": 54,
+        "name":"trip",
+        "friends":[
+            {
+                "id": "22",
+                "email": "johnpapa@vs.com",
+                "name": "john papa",
+                "phone":"+990164568",
+                "amount": "-200"
+            }
+        ],
+        "expense": 500
+    },
+
+    "addExpenseRequest": {
+        "billFor":"breakfase",
+        "amount":500,
+        "paidDate": "date",
+        "paidBy": [
+            {
+                "id": 23,
+                "amount": 566
+            }
+        ],
+        "sharedBy": [
+            {
+                "id": "23",
+                "amount": "566"
+            }
+        ]
+
+    },
+    "createGroupRequest": {
+        "name": "Football",
+        "description": "This is the expense for the football game visit",
+        "members": ["22", "33"]
+    } ,
+
+    "individualGroupResponse": {
+        "expenses": [
+            {
+                "billFor": "breakafast",
+                "paidBy": ["23", "22"],
+                "amount": "500"
+            }
+        ],
+        "total": "100"
+    }
+}
+
+{
+  "description": "string",
+  "groupName": "string",
+  "id": 0,
+  "member": [
+    {
+      "email": "string",
+      "fullName": "string",
+      "id": 0,
+      "phone": "string",
+      "userName": "string"
+    }
+  ],
+  "transactions": [
+    {
+      "amount": 0,
+      "billFor": "string",
+      "groupId": 0,
+      "id": 0,
+      "paidBy": {
+        "additionalProp1": 0,
+        "additionalProp2": 0,
+        "additionalProp3": 0
+      },
+      "paidOn": "2021-05-23T11:27:38.895Z",
+      "sharedBy": [
+        {
+          "email": "string",
+          "fullName": "string",
+          "id": 0,
+          "phone": "string",
+          "userName": "string"
+        }
+      ]
+    }
+  ]
+}
+
+{
+  "description": "string",
+  "groupName": "string",
+  "id": 0,
+  "member": [
+    {
+      "email": "string",
+      "fullName": "string",
+      "id": 0,
+      "password": "string",
+      "phone": "string",
+      "userName": "string"
+    }
+  ]
+}
+
+{
+  "amount": 0,
+  "billFor": "string",
+  "groupId": 0,
+  "id": 0,
+  "paidBy": {
+    "additionalProp1": 0,
+    "additionalProp2": 0,
+    "additionalProp3": 0
+  },
+  "paidOn": "2021-05-24T03:29:45.234Z",
+  "sharedBy": [
+    {
+      "email": "string",
+      "fullName": "string",
+      "id": 0,
+      "password": "string",
+      "phone": "string",
+      "userName": "string"
+    }
+  ]
+}
+
+/splitpay/transaction/add
+/splitpay/group/add

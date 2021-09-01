@@ -1,0 +1,16 @@
+
+<mat-toolbar class= "header" color="primary">
+  <span>SPLIT UP!</span>
+  <span class="example-spacer"></span>
+  <div>{{userDetails?.fullName || ''}}</div>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>notifications_none</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="signOut()">Sign Out</button>
+</mat-menu>

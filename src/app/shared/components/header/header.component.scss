@@ -1,0 +1,31 @@
+$background:  #E5E5E5;
+$primary: #8472F5;
+
+  .header {
+    margin-bottom: 1 rem;
+    height: 50px;
+  }
+
+  .center {
+    height: 90%;
+    padding: 10px;
+    width: 95%;
+  }
+
+  mat-card-content {
+    padding: 2rem 4rem;
+  }
+
+  .heading {
+    font-size: larger;
+  }
+
+  .home-card {
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+  }
+
+.example-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,22 @@
+<div class="add-group">
+  <mat-card class="add-group-card center">
+
+    <!-- login-page heading and subheading -->
+    <mat-card-content>
+      <div>
+        <h1><button mat-stroked-button (click)="routeBack()"><mat-icon>arrow_back</mat-icon></button>{{group.groupName}}</h1>
+      </div>
+        <mat-card *ngIf="expenses && expenses.length" class="list-container-card mat-elevation-z0">
+          <mat-card *ngFor="let expense of expenses; let i=index" class="group-list-card">
+              <div class="avatar"></div>
+              <div class="name">{{expense.billFor}}</div>
+              <div class="friends">{{getMembers(expense).slice(0,2).join(', ')}} <span class="color-blue" *ngIf="getMembers(expense).length > 2" [matTooltip]="getTooltip(expense)"> +{{group.member.length - 2}} more</span></div>
+              <div class="owes-status">{{expense.amount | currency}}</div>
+              <button mat-icon-button><mat-icon>more_horiz</mat-icon></button>
+          </mat-card>
+      </mat-card>
+
+
+    </mat-card-content>
+  </mat-card>
+</div>
